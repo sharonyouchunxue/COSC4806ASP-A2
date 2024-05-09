@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>Sharon</title>
   </head>
   <body>
-    <?php echo '<p>Hello World</p>'; ?> 
+    <?php echo '<p>Assignment 2</p>'; ?> 
 
 </html>
