@@ -29,6 +29,19 @@ Class User{
     return $statement->fetchColumn() > 0;
   }
 
+  public function authenticate_user($username, $password){
+    $db = db_connect();
+    $statement = $db->prepare("SELECT password FROM users WHERE username = :username");
+    $statement->bindParam(':username', $username);
+    $statement->execute();
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($row && password_verify($password, $row['password'])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }
 ?>
