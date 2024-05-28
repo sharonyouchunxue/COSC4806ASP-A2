@@ -33,7 +33,7 @@ if (isset($_GET['message']) && $_GET['message'] == 'success') {
         </div>
     <?php endif; ?>
 
-    <form action="/validate.php">
+    <form method="POST" action="/validate.php">
       <label for="username">Username:</label><br>
       <input type="text" id="username" name="username"><br>
       <label for="password">Password:</label><br>
