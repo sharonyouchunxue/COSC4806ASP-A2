@@ -11,6 +11,7 @@ Class User{
     return $rows;
   }
 
+  //function to create new user
   public function create_user($username, $email, $password) {
     $db = db_connect();
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -21,6 +22,7 @@ Class User{
     $statement->execute();
   }
 
+  //function to check if user exists
   public function user_exists($username) {
     $db = db_connect();
     $statement = $db->prepare("SELECT COUNT(*) FROM users WHERE username = :username");
@@ -29,6 +31,7 @@ Class User{
     return $statement->fetchColumn() > 0;
   }
 
+  //function to authenticate user
   public function authenticate_user($username, $password){
     $db = db_connect();
     $statement = $db->prepare("SELECT password FROM users WHERE username = :username");
