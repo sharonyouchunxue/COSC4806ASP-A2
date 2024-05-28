@@ -15,19 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       } else {
           // Check password length
           if (strlen($password) < 8) {
-              $message = "Password must at Least 8 characters!";
+              $message = "Password must at least 8 characters!";
           }
           // Check for at least one number
           elseif (!preg_match("#[0-9]+#", $password)) {
-              $message = "Password must at Least 1 number!";
+              $message = "Password must at least 1 number!";
           }
           // Check for at least one uppercase letter
           elseif (!preg_match("#[A-Z]+#", $password)) {
-              $message = "Password must at east 1 Capital Letter!";
+              $message = "Password must at least 1 Capital Letter!";
           }
           // Check for at least one lowercase letter
           elseif (!preg_match("#[a-z]+#", $password)) {
-              $message = "Password at Least 1 lowercase Letter!";
+              $message = "Password at least 1 lowercase Letter!";
           }
           // all conditions are met, create user
           else {
